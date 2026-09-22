@@ -23,10 +23,9 @@ app.use(
 app.use(express.json());
 app.use(cookieParser());
 
-app.get("/", (req: Request, res: Response) => {
-  res.json({
-    status: "success",
-    message: "🚀 Welcome to Personal Finance API (Express + Bun)!",
+app.get("/health", (req, res) => {
+  res.status(200).json({
+    status: "ok",
   });
 });
 
