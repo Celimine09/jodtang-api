@@ -71,7 +71,7 @@ router.post("/register", validate(registerSchema), UserController.registerUser);
  */
 router.post("/login", validate(loginSchema), UserController.loginUser);
 
-router.post("/logout", logout);
+router.post("/logout", requireAuth, UserController.logout);
 
 /**
  * @swagger
